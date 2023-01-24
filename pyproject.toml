@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "seo-keyword-research-tool"
+version = "0.1.0"
+description = "Python SEO keywords suggestion tool. Google Autocomplete, Related Questions and Related Searches."
+authors = ["chukhraiartur <chukhraiartur@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "seo_keyword_research_tool"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+google-search-results = "^2.4.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
