@@ -56,56 +56,34 @@ def get_related_questions(query: str, domain: str, country: str, lang: str):
     return related_questions_results
 
 
-def filter_duplicates(data: dict):
-    filtered_data = []
-
-    if data.get('auto_complete'):
-        for i in range(len(data.get('auto_complete', []))):    
-            if data['auto_complete'][i] not in data.get('related_questions', []) + data.get('related_searches', []):
-                filtered_data.append(data['auto_complete'][i])
-
-    if data.get('related_searches'):
-        for i in range(len(data.get('related_searches', []))):    
-            if data['related_searches'][i] not in data.get('auto_complete', []) + data.get('related_questions', []):
-                filtered_data.append(data['related_searches'][i])
-    
-    if data.get('related_questions'):
-        for i in range(len(data.get('related_questions', []))):
-            if data['related_questions'][i] not in data.get('auto_complete', []) + data.get('related_searches', []):
-                filtered_data.append(data['related_questions'][i])
-    
-    return filtered_data
-
-
 def save_to_csv(data: dict):
-    with open('data.csv', 'w') as file:
-        writer = csv.writer(file)
+    with open('data.csv', 'w') as csv_file:
+        writer = csv.writer(csv_file)
         writer.writerow(data.keys())
         writer.writerows(zip_longest(*data.values()))
 
 
 def save_to_json(data: dict):
-    with open('data.json', 'w', encoding='utf-8') as file:
-        json.dump(data, file, indent=2, ensure_ascii=False)
+    with open('data.json', 'w', encoding='utf-8') as json_file:
+        json.dump(data, json_file, indent=2, ensure_ascii=False)
 
 
 def save_to_txt(data: dict):
-    with open('data.txt', 'w') as file:
+    with open('data.txt', 'w') as txt_file:
         for key in data.keys():
-            file.write('\n'.join(data[key]) + '\n')
+            txt_file.write('\n'.join(data[key]) + '\n')
 
 
 def main():
     parser = argparse.ArgumentParser(prog='SEO Keyword Research Options')
     parser.add_argument('-q','--query', metavar='', required=True, help='')
+    parser.add_argument('-st','--save-to', metavar='', required=True, help='')
     parser.add_argument('-gd','--domain', action='store_true', default='google.com', help='')
     parser.add_argument('-gl','--country', action='store_true', default='us', help='')
     parser.add_argument('-hl','--lang', action='store_true', default='en', help='')
     parser.add_argument('-ac','--auto-complete', action='store_true', help='')
     parser.add_argument('-rs','--related-searches', action='store_true', help='')
     parser.add_argument('-rq','--related-questions', action='store_true', help='')
-    parser.add_argument('-fd','--filter-duplicates', action='store_true', help='')
-    parser.add_argument('-st','--save-to', action='store_true', help='')
     args, unknown = parser.parse_known_args()
 
     data = {}
@@ -118,9 +96,6 @@ def main():
 
     if args.related_questions:
         data['related_questions'] = get_related_questions(args.query, args.domain, args.country, args.lang)
-
-    if args.filter_duplicates:
-        data = filter_duplicates(data)
 
     print(json.dumps(data, indent=2, ensure_ascii=False))
 
