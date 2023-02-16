@@ -19,7 +19,7 @@ setup(
     include_package_data=True,
     python_requires='>=3.8',
     classifiers = [
-        'Development Status :: 1 - Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Operating System :: Microsoft :: Windows',
         'Operating System :: MacOS',
