@@ -129,8 +129,6 @@ $ python main.py --api-key <your_serpapi_api_key> \
     "Do Starbucks employees get free food?"
   ]
 }
-Saving data in JSON format...
-Data successfully saved to data.json file
 ```
 
 
