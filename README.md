@@ -1,6 +1,6 @@
 <h1 align="center">SEO Keyword Research Tool 🔎</h1>
 
-<p align="center">A simple Python SEO keywords suggestion tool tracking from Google engine that pulls data from Google Autocomplete, People Also Ask and People Also Search.</p>
+<p align="center">A simple Python SEO keywords suggestion tool tracking from Google engine that pulls data from Autocomplete, People Also Ask and Related Searches.</p>
 
 
 ## ⚙️Installation
