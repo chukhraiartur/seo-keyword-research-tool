@@ -106,6 +106,10 @@ def save_to_txt(data: dict):
             txt_file.write('\n'.join(data[key]) + '\n')
 
 
+def print_data(data: dict):
+    print(json.dumps(data, indent=2, ensure_ascii=False))
+
+
 def main():
     parser = argparse.ArgumentParser(
         prog='SerpApi SEO Keyword Research Tool', 
@@ -125,6 +129,9 @@ def main():
     
     data = {}
     
+    if args.depth_limit > 4:
+        args.depth_limit = 4
+
     if 'all' in args.engines:
         data['auto_complete'] = get_auto_complete(args.query, args.country, args.lang, args.api_key)
         data['related_searches'] = get_related_searches(args.query, args.domain, args.country, args.lang, args.api_key)
@@ -135,8 +142,8 @@ def main():
         data['related_searches'] = get_related_searches(args.query, args.domain, args.country, args.lang, args.api_key)
     elif 'rq' in args.engines:
         data['related_questions'] = get_related_questions(args.query, args.domain, args.country, args.lang, args.api_key, args.depth_limit)
-    
-    # print(json.dumps(data, indent=2, ensure_ascii=False))
+
+    # print_data(data)
 
     if args.save_to:
         print(f'Saving data in {args.save_to.upper()} format...')
