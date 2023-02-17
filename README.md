@@ -1,7 +1,8 @@
 <h1 align="center">SEO Keyword Research Tool 🔎</h1>
 
-<p align="center">A simple Python SEO keywords suggestion tool tracking from Google engine that pulls data from Google Autocomplete, People Also Ask and People Also Search.</p>
+A simple Python SEO keywords suggestion tool tracking from Google engine that pulls data from Autocomplete, People Also Ask and Related Searches.
 
+This tool uses [SerpApi](https://serpapi.com/) as a tool to parse data from Google search results. You can use provided API key that will be available after installation, however, it's purely for testing purposes to see if the tool fits your needs. If you'll be using it for your own purpose (personal or commercial), you have to use [your own SerpApi key](https://serpapi.com/manage-api-key).
 
 ## ⚙️Installation
 
@@ -38,6 +39,18 @@ optional arguments:
 
 Found a bug? Open issue: https://github.com/chukhraiartur/seo-keyword-research-tool/issues
 ```
+
+The `--depth-limit` argument for People Also Ask can be set from `0` to `4`. For each depth limit value, the number of results returned grows exponentially. Below is a table showing how the depth limit argument is affected:
+
+| Depth limit | Number of results | Explanation |
+|-------------|-------------------|-------------|
+| 0 | 4 | Standard results |
+| 1 | 12 | 4*2 = 8 + 4 = 12 |
+| 2 | 36 | 8*3 = 24 + 12 = 36 |
+| 3 | 108 | 24*3 = 72 + 36 = 108 |
+| 4 | 324 | 72*3 = 216 + 108 = 324 |
+
+📌Note: This is how the logic works for the `google.com` domain, on other domains the results may differ.
 
 #### Simple example:
 
@@ -76,6 +89,8 @@ $ python main.py -q "starbucks coffee"
 ```
 
 #### Advanced example
+
+This example will use [related questions API](https://serpapi.com/related-questions) engine with a depth limit value of 2, and saves data to JSON:
 
 ```bash
 $ python main.py --api-key <your_serpapi_api_key> \
@@ -129,8 +144,6 @@ $ python main.py --api-key <your_serpapi_api_key> \
     "Do Starbucks employees get free food?"
   ]
 }
-Saving data in JSON format...
-Data successfully saved to data.json file
 ```
 
 
