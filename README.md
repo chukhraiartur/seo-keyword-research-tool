@@ -1,6 +1,6 @@
 <h1 align="center">SEO Keyword Research Tool 🔎</h1>
 
-A simple Python SEO keywords suggestion tool tracking from Google engine that pulls data from Autocomplete, People Also Ask and Related Searches.
+A simple Python SEO keywords suggestion tool that pulls data from Google Autocomplete, People Also Ask and Related Searches.
 
 This tool uses [SerpApi](https://serpapi.com/) as a tool to parse data from Google search results. You can use provided API key that will be available after installation, however, it's purely for testing purposes to see if the tool fits your needs. If you'll be using it for your own purpose (personal or commercial), you have to use [your own SerpApi key](https://serpapi.com/manage-api-key).
 
