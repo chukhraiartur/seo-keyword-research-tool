@@ -4,6 +4,9 @@ A simple Python SEO keywords suggestion tool tracking from Google engine that pu
 
 This tool uses [SerpApi](https://serpapi.com/) as a tool to parse data from Google search results. You can use provided API key that will be available after installation, however, it's purely for testing purposes to see if the tool fits your needs. If you'll be using it for your own purpose (personal or commercial), you have to use [your own SerpApi key](https://serpapi.com/manage-api-key).
 
+![seo-keywords-research-tool](https://user-images.githubusercontent.com/78694043/221098691-5ad4d2b9-0ebd-4c65-ab1e-47a599955e9c.gif)
+
+
 ## ⚙️Installation
 
 ```bash
@@ -145,6 +148,10 @@ $ python main.py --api-key <your_serpapi_api_key> \
   ]
 }
 ```
+
+### ✍Contributing
+
+Feel free to open bug issue, something isn't working, what feature to add, or anything else related to Google autocomplete, related searches or people also ask.
 
 
 <p align="center";>Sponsored by <a href="https://serpapi.com/">SerpApi</a> 🧡</p>
