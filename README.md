@@ -27,12 +27,15 @@ $ python main.py -h
 ```
 
 ```lang-none
+SerpApi SEO Keyword Research Tool [-h] -q  [-e  [...]] [-dl] [-st] [-ak] [-gd] [-gl] [-hl]
+
 Extract keywrods from: Google Autocomplete, People Also Ask, and People Also Search and saves data to CSV/JSON/TXT.
 
 optional arguments:
   -h, --help            show this help message and exit
   -q , --query          Search query (required).
-  -e , --engines        Choices of engines to extract: Autocomplete (ac), Related Searches (rs), People Also Ask (rq). All engines are selected by default.
+  -e  [ ...], --engines  [ ...]
+                        Choices of engines to extract: Autocomplete (ac), Related Searches (rs), People Also Ask (rq). You can select multiple engines. All engines are selected by default.
   -dl , --depth-limit   Depth limit for People Also Ask. Default is 0, first 2-4 results.
   -st , --save-to       Saves the results in the current directory in the selected format (CSV, JSON, TXT). Default CSV.
   -ak , --api-key       Your SerpApi API key: https://serpapi.com/manage-api-key. Default is a test API key to test CLI.
