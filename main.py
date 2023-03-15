@@ -37,9 +37,7 @@ def main():
             data['related_questions'] = keyword_research.get_related_questions(args.depth_limit)
 
     if data:
-        keyword_research.print_data(data)
-
-    if args.save_to:
+        # keyword_research.print_data(data)
         print(f'Saving data in {args.save_to.upper()} format...')
 
         if args.save_to.upper() == 'CSV':
