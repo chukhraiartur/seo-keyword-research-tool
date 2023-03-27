@@ -1,3 +1,13 @@
+<div align="center">
+<p>Special thanks to:</p>
+<div>
+  <img src="https://sindresorhus.com/assets/thanks/serpapi-logo-light.svg" width="140" alt="SerpApi">
+</div>
+<a href="https://serpapi.com">
+  <b>API to get search engine results with ease.</b>
+</a>
+</div>
+
 <h1 align="center">SEO Keyword Research Tool 🔎</h1>
 
 A simple Python SEO keywords suggestion tool that pulls data from Google Autocomplete, People Also Ask and Related Searches.
