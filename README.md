@@ -37,12 +37,15 @@ $ python main.py -h
 ```
 
 ```lang-none
+SerpApi SEO Keyword Research Tool [-h] -q  [-e  [...]] [-dl] [-st] [-ak] [-gd] [-gl] [-hl]
+
 Extract keywrods from: Google Autocomplete, People Also Ask, and People Also Search and saves data to CSV/JSON/TXT.
 
 optional arguments:
   -h, --help            show this help message and exit
   -q , --query          Search query (required).
-  -e , --engines        Choices of engines to extract: Autocomplete (ac), Related Searches (rs), People Also Ask (rq). All engines are selected by default.
+  -e  [ ...], --engines  [ ...]
+                        Choices of engines to extract: Autocomplete (ac), Related Searches (rs), People Also Ask (rq). You can select multiple engines. All engines are selected by default.
   -dl , --depth-limit   Depth limit for People Also Ask. Default is 0, first 2-4 results.
   -st , --save-to       Saves the results in the current directory in the selected format (CSV, JSON, TXT). Default CSV.
   -ak , --api-key       Your SerpApi API key: https://serpapi.com/manage-api-key. Default is a test API key to test CLI.
@@ -101,7 +104,7 @@ $ python main.py -q "starbucks coffee"
 }
 ```
 
-#### Advanced example
+#### Advanced example:
 
 This example will use [related questions API](https://serpapi.com/related-questions) engine with a depth limit value of 2, and saves data to JSON:
 
@@ -157,6 +160,32 @@ $ python main.py --api-key <your_serpapi_api_key> \
     "Do Starbucks employees get free food?"
   ]
 }
+```
+
+#### Example of manual data extraction (without CLI):
+
+```python
+from seo_keyword_research import SeoKeywordResearch
+
+keyword_research = SeoKeywordResearch(
+    query='starbucks coffee',
+    api_key='<your_serpapi_api_key>',
+    lang='en',
+    country='us',
+    domain='google.com'
+)
+
+auto_complete_results = keyword_research.get_auto_complete()
+related_searches_results = keyword_research.get_related_searches()
+related_questions_results = keyword_research.get_related_questions()
+
+data = {
+    'auto_complete': auto_complete_results,
+    'related_searches': related_searches_results,
+    'related_questions': related_questions_results
+}
+
+keyword_research.print_data(data)
 ```
 
 ### ✍Contributing
