@@ -1,4 +1,4 @@
-from seo_keyword_research import SeoKeywordResearch
+from SeoKeywordResearch import SeoKeywordResearch
 
 keyword_research = SeoKeywordResearch(
     query='starbucks coffee',
