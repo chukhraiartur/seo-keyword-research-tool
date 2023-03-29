@@ -162,6 +162,3 @@ $ python main.py --api-key <your_serpapi_api_key> \
 ### ✍Contributing
 
 Feel free to open bug issue, something isn't working, what feature to add, or anything else related to Google autocomplete, related searches or people also ask.
-
-
-<p align="center";>Sponsored by <a href="https://serpapi.com/">SerpApi</a> 🧡</p>
