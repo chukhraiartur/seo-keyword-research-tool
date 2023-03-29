@@ -67,13 +67,14 @@ class SeoKeywordResearch:
 
         if depth_limit:
             def get_depth_results(token: str, depth: int) -> None:
-                ''' This function allows you to extract more data from People Also Ask.
+                '''
+                This function allows you to extract more data from People Also Ask.
                 
                 The function takes the following arguments:
                 
-                - `token` - allows access to additional related questions;
-                
-                - `depth` - limits the input depth for each related question. '''
+                :param token: allows access to additional related questions.
+                :param depth: limits the input depth for each related question.
+                '''
 
                 depth_params = {
                     'api_key': self.api_key,
