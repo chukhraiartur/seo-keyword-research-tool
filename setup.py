@@ -45,7 +45,7 @@ setup(
         'cli'
     ],
     install_requires=[
-          'google-search-results>=2.4',
+        'google-search-results>=2.4',
     ],
     project_urls={
         'Documentation': 'https://github.com/chukhraiartur/seo-keyword-research-tool',
