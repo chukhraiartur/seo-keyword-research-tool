@@ -1,7 +1,7 @@
 <div align="center">
 <p>Special thanks to:</p>
 <div>
-  <img src="https://user-images.githubusercontent.com/81998012/231172985-81515e8b-bc41-46b4-83fa-d129d5f3e718.svg" width="140" alt="SerpApi">
+  <img src="https://user-images.githubusercontent.com/81998012/231172985-81515e8b-bc41-46b4-83fa-d129d5f3e718.svg" width="100" alt="SerpApi">
 </div>
 <a href="https://serpapi.com">
   <b>API to get search engine results with ease.</b>
@@ -12,9 +12,13 @@
 
 A simple Python SEO keywords suggestion tool that pulls data from Google Autocomplete, People Also Ask and Related Searches.
 
-This tool uses [SerpApi](https://serpapi.com/) as a tool to parse data from Google search results. You can use provided API key that will be available after installation, however, it's purely for testing purposes to see if the tool fits your needs. If you'll be using it for your own purpose (personal or commercial), you have to use [your own SerpApi key](https://serpapi.com/manage-api-key).
+<div align="center">
+   <img src="https://user-images.githubusercontent.com/78694043/231768966-187e9ab2-fc8f-460b-bf9f-bcb39cc5a968.svg" width="700" alt="SerpApi">
+</div>
 
 ![seo-keywords-research-tool](https://user-images.githubusercontent.com/78694043/221098691-5ad4d2b9-0ebd-4c65-ab1e-47a599955e9c.gif)
+
+This tool uses [SerpApi](https://serpapi.com/) as a tool to parse data from Google search results. You can use provided API key that will be available after installation, however, it's purely for testing purposes to see if the tool fits your needs. If you'll be using it for your own purpose (personal or commercial), you have to use [your own SerpApi key](https://serpapi.com/manage-api-key).
 
 
 ## ⚙️Installation
