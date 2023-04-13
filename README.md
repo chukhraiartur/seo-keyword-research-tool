@@ -10,7 +10,9 @@
 
 <h1 align="center">SEO Keyword Research Tool 🔎</h1>
 
-A simple Python SEO keywords suggestion tool that pulls data from Google Autocomplete, People Also Ask and Related Searches.
+<p align="center">
+  Python SEO keywords suggestion tool that pulls data from Google Autocomplete, People Also Ask and Related Searches.
+</p>
 
 <div align="center">
    <img src="https://user-images.githubusercontent.com/78694043/231768966-187e9ab2-fc8f-460b-bf9f-bcb39cc5a968.svg" width="700" alt="SerpApi">
