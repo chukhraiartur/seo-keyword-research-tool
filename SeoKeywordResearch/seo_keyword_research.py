@@ -100,19 +100,19 @@ class SeoKeywordResearch:
 
 
     def save_to_csv(self, data: dict) -> None:
-        with open(f'{self.query}.csv', 'w') as csv_file:
+        with open(f'{self.query.replace(" ", "_")}.csv', 'w') as csv_file:
             writer = csv.writer(csv_file)
             writer.writerow(data.keys())
             writer.writerows(zip_longest(*data.values()))
 
 
     def save_to_json(self, data: dict) -> None:
-        with open(f'{self.query}.json', 'w', encoding='utf-8') as json_file:
+        with open(f'{self.query.replace(" ", "_")}.json', 'w', encoding='utf-8') as json_file:
             json.dump(data, json_file, indent=2, ensure_ascii=False)
 
 
     def save_to_txt(self, data: dict) -> None:
-        with open(f'{self.query}.txt', 'w') as txt_file:
+        with open(f'{self.query.replace(" ", "_")}.txt', 'w') as txt_file:
             for key in data.keys():
                 txt_file.write('\n'.join(data.get(key)) + '\n')
 

@@ -1,4 +1,4 @@
-from seo_keyword_research import SeoKeywordResearch
+from SeoKeywordResearch import SeoKeywordResearch
 import argparse
 
 
@@ -37,7 +37,7 @@ def main():
             data['related_questions'] = keyword_research.get_related_questions(args.depth_limit)
 
     if data:
-        # keyword_research.print_data(data)
+        keyword_research.print_data(data)
         print(f'Saving data in {args.save_to.upper()} format...')
 
         if args.save_to.upper() == 'CSV':
@@ -47,7 +47,7 @@ def main():
         elif args.save_to.upper() == 'TXT':
             keyword_research.save_to_txt(data)
 
-        print(f'Data successfully saved to data.{args.save_to.lower()} file')
+        print(f'Data successfully saved to {args.query.replace(" ", "_")}.{args.save_to.lower()} file')
 
 
 if __name__ == "__main__":
