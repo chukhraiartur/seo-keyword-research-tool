@@ -178,7 +178,7 @@ $ python main.py --api-key <your_serpapi_api_key> \
 #### Example of manual data extraction (without CLI):
 
 ```python
-from seo_keyword_research import SeoKeywordResearch
+from SeoKeywordResearch import SeoKeywordResearch
 
 keyword_research = SeoKeywordResearch(
     query='starbucks coffee',
