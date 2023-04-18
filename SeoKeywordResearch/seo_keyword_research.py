@@ -10,6 +10,7 @@ class SeoKeywordResearch:
         self.lang = lang
         self.country = country
         self.domain = domain
+        self.__related_questions_results = []
 
 
     def get_auto_complete(self) -> list:
@@ -47,6 +48,33 @@ class SeoKeywordResearch:
         return related_searches_results
 
 
+    def __get_depth_results(self, token: str, depth: int) -> None:
+        '''
+        This function allows you to extract more data from People Also Ask.
+        
+        The function takes the following arguments:
+        
+        :param token: allows access to additional related questions.
+        :param depth: limits the input depth for each related question.
+        '''
+
+        depth_params = {
+            'api_key': self.api_key,
+            'engine': 'google_related_questions',
+            'next_page_token': token,
+        }
+
+        depth_search = GoogleSearch(depth_params)
+        depth_results = depth_search.get_dict()
+        
+        self.__related_questions_results.extend([result.get('question') for result in depth_results.get('related_questions', [])])
+        
+        if depth > 1:
+            for question in depth_results.get('related_questions', []):
+                if question.get('next_page_token'):
+                    self.__get_depth_results(question.get('next_page_token'), depth - 1)
+
+
     def get_related_questions(self, depth_limit: int = 0) -> list:
         params = {
             'api_key': self.api_key,            # https://serpapi.com/manage-api-key
@@ -60,43 +88,17 @@ class SeoKeywordResearch:
         search = GoogleSearch(params)           # data extraction on the SerpApi backend
         results = search.get_dict()             # JSON -> Python dict
 
-        related_questions_results = [result.get('question') for result in results.get('related_questions', [])]
+        self.__related_questions_results = [result.get('question') for result in results.get('related_questions', [])]
 
         if depth_limit > 4:
             depth_limit = 4
 
-        if depth_limit:
-            def get_depth_results(token: str, depth: int) -> None:
-                '''
-                This function allows you to extract more data from People Also Ask.
-                
-                The function takes the following arguments:
-                
-                :param token: allows access to additional related questions.
-                :param depth: limits the input depth for each related question.
-                '''
-
-                depth_params = {
-                    'api_key': self.api_key,
-                    'engine': 'google_related_questions',
-                    'next_page_token': token,
-                }
-
-                depth_search = GoogleSearch(depth_params)
-                depth_results = depth_search.get_dict()
-                
-                related_questions_results.extend([result.get('question') for result in depth_results.get('related_questions', [])])
-                
-                if depth > 1:
-                    for question in depth_results.get('related_questions', []):
-                        if question.get('next_page_token'):
-                            get_depth_results(question.get('next_page_token'), depth - 1)
-                        
+        if depth_limit:      
             for question in results.get('related_questions', []):
                 if question.get('next_page_token'):
-                    get_depth_results(question.get('next_page_token'), depth_limit)
+                    self.__get_depth_results(question.get('next_page_token'), depth_limit)
             
-        return related_questions_results
+        return self.__related_questions_results
 
 
     def save_to_csv(self, data: dict) -> None:
