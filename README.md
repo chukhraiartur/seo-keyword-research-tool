@@ -36,17 +36,13 @@ This tool uses [SerpApi](https://serpapi.com/) as a tool to parse data from Goog
 $ pip install seo-keyword-research-tool
 ```
 
-```bash
-$ git clone https://github.com/chukhraiartur/seo-keyword-research-tool.git
-```
-
 
 ## 🤹‍♂️Usage
 
 #### Available CLI arugments:
 
 ```bash
-$ python main.py -h
+$ seo -h
 ```
 
 ```lang-none
@@ -84,7 +80,7 @@ The `--depth-limit` argument for People Also Ask can be set from `0` to `4`. For
 #### Simple example:
 
 ```bash
-$ python main.py -q "starbucks coffee"
+$ seo -q "starbucks coffee"
 ```
 
 ```json
@@ -122,7 +118,7 @@ $ python main.py -q "starbucks coffee"
 This example will use [related questions API](https://serpapi.com/related-questions) engine with a depth limit value of 2, and saves data to JSON:
 
 ```bash
-$ python main.py --api-key <your_serpapi_api_key> \
+$ seo --api-key "<your_serpapi_api_key>" \
 > -q "starbucks coffee" \
 > -e rq \
 > -dl 2 \
@@ -198,6 +194,7 @@ data = {
     'related_questions': related_questions_results
 }
 
+keyword_research.save_to_json(data)
 keyword_research.print_data(data)
 ```
 
