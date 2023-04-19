@@ -8,7 +8,7 @@ setup(
     name='seo-keyword-research-tool',
     description = 'Python SEO keywords suggestion tool. Google Autocomplete, Related Questions and Related Searches.',
     url='https://github.com/chukhraiartur/seo-keyword-research-tool',
-    version='0.1.7',
+    version='0.1.8',
     license='MIT',
     author='Artur Chukhrai',
     author_email='chukhraiartur@gmail.com',
@@ -54,7 +54,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'seo = cli:main',
+            'seo=SeoKeywordResearch.cli:main',
         ],
     },
 )
