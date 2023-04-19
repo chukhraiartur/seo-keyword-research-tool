@@ -18,4 +18,5 @@ data = {
     'related_questions': related_questions_results
 }
 
+keyword_research.save_to_json(data)
 keyword_research.print_data(data)
