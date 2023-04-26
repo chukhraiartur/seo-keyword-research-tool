@@ -1,7 +1,7 @@
 <div align="center">
 <p>Special thanks to:</p>
 <div>
-  <img src="https://user-images.githubusercontent.com/81998012/231172985-81515e8b-bc41-46b4-83fa-d129d5f3e718.svg" width="100" alt="SerpApi">
+  <img src="https://user-images.githubusercontent.com/81998012/231172985-81515e8b-bc41-46b4-83fa-d129d5f3e718.svg" width="60" alt="SerpApi">
 </div>
 <a href="https://serpapi.com">
   <b>API to get search engine results with ease.</b>
@@ -15,19 +15,21 @@
 </p>
 
 <div align="center">
-   <img src="https://user-images.githubusercontent.com/78694043/231768966-187e9ab2-fc8f-460b-bf9f-bcb39cc5a968.svg" width="700" alt="SerpApi">
+   <img src="https://user-images.githubusercontent.com/78694043/231768966-187e9ab2-fc8f-460b-bf9f-bcb39cc5a968.svg" width="600" alt="SerpApi">
 </div>
 
 <div align="center">
 
-  <a href="https://pepy.tech/project/seo-keyword-research-tool">![Downloads](https://static.pepy.tech/personalized-badge/seo-keyword-research-tool?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)</a>
+  <a href="">![PyPI - Downloads](https://img.shields.io/pypi/dm/seo-keyword-research-tool)</a>
   <a href="">![licence](https://img.shields.io/github/license/chukhraiartur/seo-keyword-research-tool?color=blue)</a>
 
 </div>
 
-![seo-keywords-research-tool](https://user-images.githubusercontent.com/78694043/221098691-5ad4d2b9-0ebd-4c65-ab1e-47a599955e9c.gif)
+![seo-keywords-research-tool-example-usage](https://user-images.githubusercontent.com/78694043/234543434-0482d07b-3db5-430e-b00a-91647bf2d9c8.gif)
 
-This tool uses [SerpApi](https://serpapi.com/) as a tool to parse data from Google search results. You can use provided API key that will be available after installation, however, it's purely for testing purposes to see if the tool fits your needs. If you'll be using it for your own purpose (personal or commercial), you have to use [your own SerpApi key](https://serpapi.com/manage-api-key).
+This tool uses [SerpApi](https://serpapi.com/) as a tool to parse data from Google search results. 
+
+You can use provided API key that will be available after installation, however, it's purely for testing purposes to see if the tool fits your needs. If you'll be using it for your own purpose (personal or commercial), you have to use [your own SerpApi key](https://serpapi.com/manage-api-key).
 
 
 ## ⚙️Installation
