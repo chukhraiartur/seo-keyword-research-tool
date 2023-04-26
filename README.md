@@ -20,7 +20,7 @@
 
 <div align="center">
 
-  <a href="">![PyPI - Downloads](https://img.shields.io/pypi/dm/seo-keyword-research-tool)</a>
+  <a href="https://pepy.tech/project/seo-keyword-research-tool">![Downloads](https://static.pepy.tech/badge/seo-keyword-research-tool/month)</a>
   <a href="">![licence](https://img.shields.io/github/license/chukhraiartur/seo-keyword-research-tool?color=blue)</a>
 
 </div>
