@@ -25,8 +25,6 @@
 
 </div>
 
-![seo-keywords-research-tool-example-usage](https://user-images.githubusercontent.com/78694043/234543434-0482d07b-3db5-430e-b00a-91647bf2d9c8.gif)
-
 This tool uses [SerpApi](https://serpapi.com/) as a tool to parse data from Google search results. 
 
 You can use provided API key that will be available after installation, however, it's purely for testing purposes to see if the tool fits your needs. If you'll be using it for your own purpose (personal or commercial), you have to use [your own SerpApi key](https://serpapi.com/manage-api-key).
@@ -40,6 +38,8 @@ $ pip install seo-keyword-research-tool
 
 
 ## 🤹‍♂️Usage
+
+![seo-keywords-research-tool-example-usage](https://user-images.githubusercontent.com/78694043/234543434-0482d07b-3db5-430e-b00a-91647bf2d9c8.gif)
 
 #### Available CLI arugments:
 
